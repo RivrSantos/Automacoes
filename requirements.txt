@@ -1,0 +1,4 @@
+os
+pyautogui
+time
+tkinter
