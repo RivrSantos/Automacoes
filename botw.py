@@ -6,9 +6,8 @@ from tkinter.messagebox import askyesnocancel
 def autom():   
     try:
         os.startfile("c:/Windows/system32/notepad")
-        # pg.locateOnWindow(grayscale= True)
         t.sleep(4)
-        pg.write(" CARMO MOTOS LTDA    | CONSORCIO | MOTOS | PECAS | SERVICOS\n\n Atendemos toda regiao do norte de Minas     |    CNPJ: 0000000000    | | C   MG: Montes Claros    \n\n Cliente: \n Contato: \n Endereco: \n Motocicleta:                      Chassis:   O                Placa:          \n Km:      \n Servico:  \n\n\n Observaçoes Gerais:   N                                                                      \n\n\n Mao de Obra: R$      S        Peças: R$           Valor total: ORR$         \n\n Assinatura:                                    Data: __/__/__ \n\n * Concordo e estou ciente Ass: _________________________________________\n\n") # interval= 0.1
+        pg.write(" Data: __/__/__ \n\n * Concordo e estou ciente Ass: ___________\n\n") # escreva seu documento aqui
         pg.press("enter")
         pg.PAUSE = 4
         pg.hotkey("Ctrl","S")
@@ -46,15 +45,15 @@ def enviar_msg_whats():
         t.sleep(30)
         pg.moveTo(200,180, duration=2)
         pg.click()
-        pg.write("riva")
+        pg.write("fulano") # voce pode buscar por contato ou grupo sw WhatsApp
         t.sleep(5)
         pg.press("enter")
-        pg.write("Ola! Feliz Natal")
+        pg.write("Ola! ") # escreva a mensagem que deseja enviar
         pg.press("enter")
         t.sleep(3)
         pg.screenshot("screen.png")
         t.sleep(1)
-        pg.click(1365,1)
+        pg.click(1365,1) # verifique a resoluçao do seu monitor para configurar o movimento do mouse
         pg.confirm(title= "Confirmaçao",text="O código foi finalizado. Você já pode utilizar o computador!")
         pg.press("esc")
     except KeyboardInterrupt:
@@ -64,7 +63,6 @@ def enviar_msg_whats():
 confirmacao = pg.confirm(title= "Automaçao",text="Ola!\n Deseja iniciar o programa?", buttons=["Bot Serviço", "Bot Whatszapp"])
 if confirmacao == "Bot Serviço":
     # pg.hotkey('ctrl', 'shift', 'esc')
-    # pg.confirm(title= "Automaçao", text= "O codigo vai começar. Nao utilize nada do computador ate o codigo finalizar!")
     pg.PAUSE = 0.5
     autom()
     
